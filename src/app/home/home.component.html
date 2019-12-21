@@ -1,0 +1,24 @@
+
+<div>
+    <ul class="list-group">
+          <li class="list-group-item"  *ngFor="let item of itemsList">
+            <input type="radio" [(ngModel)]="radioSelected" name="list_name" value="{{item.value}}" checked
+            (change)="onItemChange(item)"/> 
+            {{item.name}}
+          </li>
+    </ul>
+  </div>
+  <div>
+    <label>Summary: </label>
+    <select (change)="filterForeCasts($event.target.value)">
+        <option value="0">--All--</option>
+        <option *ngFor="let summary of summaries" value={{summary}}>
+            {{summary}}
+        </option>
+    </select>
+</div>
+
+
+
+<app-charts [major]="major" [otions]='minor'></app-charts>
+<app-tables [major]="major" [otions]='minor'></app-tables>

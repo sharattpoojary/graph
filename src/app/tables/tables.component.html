@@ -1,0 +1,22 @@
+
+  <div class="container">
+    <h2>Data Display</h2>
+               
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th >SL</th>
+          <th>name</th>
+          <th>Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customerArray;let i=index">
+            <th >{{i+1}}</th>
+            <th>{{customer.Name || customer.title}}</th>
+            <th>{{customer.count}}</th>
+          </tr>
+     
+      </tbody>
+    </table>
+  </div>
